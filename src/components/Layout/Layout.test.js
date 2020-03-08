@@ -21,10 +21,16 @@ describe('<Layout />', () => {
     it('Should render LoginForm if user is not connected.', () => {
         expect(wrapper.find(LoginForm)).toHaveLength(1);
     });
-    it('Should render AddForms, Filters, ItemList if user is connected', () => {
+    it('Should render AddForms if user is connected', () => {
         wrapper.setProps({isConnected: true});
         expect(wrapper.find(Filters)).toHaveLength(1);
+    })
+    it('Should render Filters if user is connected', () => {
+        wrapper.setProps({isConnected: true});
         expect(wrapper.find(ItemList)).toHaveLength(1);
+    })
+    it('Should render ItemList if user is connected', () => {
+        wrapper.setProps({isConnected: true});
         expect(wrapper.find(AddForms)).toHaveLength(1);
     })
 });
